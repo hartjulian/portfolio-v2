@@ -26,9 +26,12 @@ export const site = {
   name: "Julian Hart",
   tagline: "Software Engineer",
   focus:
-    "Currently refreshing my portfolio and seeking full-stack or frontend engineering roles.",
-  description:
-    "I build clean, accessible web applications with a focus on performance and thoughtful user experience.",
+    "Currently building projects with React and ASP.NET Core while seeking a Junior Software Engineer role in Auckland.",
+  description: [
+    "A software developer and former Visa BA with a strong interest in building technology that solves complex problems and delivers real-world value.",
+    "I'm currently strengthening my full-stack engineering skills while I seek opportunities to return to a hands-on role as a junior developer. I bring together previous development experience with a background in product management, analysis and systems-focused roles.",
+    "Outside of work, I'm an avid runner and enjoy discovering interesting coffees and craft beers.",
+  ],
 };
 
 export const nav: NavItem[] = [
@@ -37,39 +40,22 @@ export const nav: NavItem[] = [
   { id: "skills", label: "Skills" },
 ];
 
-export const about = site.description;
-
 export const projects: Project[] = [
   {
-    title: "Taskflow",
+    title: "ShopEZ",
     description:
-      "A collaborative task manager with real-time updates, drag-and-drop boards, and team workspaces.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+      "The final project for the Codecademy Full Stack Engineer career path. A full-stack e-commerce platform with a focus on performance and scalability.",
+    tech: ["React", "React Router", "PostgreSQL", "Material UI", "Express", "Node.js", "JavaScript"],
+    liveUrl: "https://hartjulian-shopez.netlify.app",
+    githubUrl: "https://github.com/hartjulian/shopez-frontend",
   },
   {
-    title: "Weather Canvas",
+    title: "Task Manager",
     description:
-      "Minimal weather dashboard with location search, hourly forecasts, and responsive data visualizations.",
-    tech: ["React", "TypeScript", "OpenWeather API"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
-  },
-  {
-    title: "DevNotes",
-    description:
-      "Markdown note-taking app with full-text search, tagging, and offline support via service workers.",
-    tech: ["Next.js", "Node.js", "SQLite", "PWA"],
-    githubUrl: "https://github.com",
-  },
-  {
-    title: "API Gateway Toolkit",
-    description:
-      "Internal tooling for monitoring, rate limiting, and logging across microservices.",
-    tech: ["Node.js", "Redis", "Docker", "GraphQL"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+      "A task manager built with React and TypeScript. It allows you to add, edit, and delete tasks.",
+    tech: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Cursor"],
+    liveUrl: "https://hartjulian-taskmanager.netlify.app",
+    githubUrl: "https://github.com/hartjulian/task-manager",
   },
 ];
 
@@ -81,27 +67,23 @@ export const skills: Skill[] = [
   { name: "Node.js", icon: "SiNodedotjs" },
   { name: "PostgreSQL", icon: "SiPostgresql" },
   { name: "Tailwind CSS", icon: "SiTailwindcss" },
-  { name: "Git", icon: "SiGit" },
-  { name: "Docker", icon: "SiDocker" },
-  { name: "GraphQL", icon: "SiGraphql" },
-  { name: "Python", icon: "SiPython" },
-  { name: "Figma", icon: "SiFigma" },
+  { name: "GitHub", icon: "SiGithub" },
 ];
 
 export const social: SocialLink[] = [
   {
     label: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/hartjulian",
     icon: "github",
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/julianhart81/",
     icon: "linkedin",
   },
   {
     label: "Email",
-    href: "mailto:hello@example.com",
+    href: "mailto:julian.w.hart@gmail.com",
     icon: "email",
   },
 ];

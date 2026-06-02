@@ -1,14 +1,10 @@
 import type { IconType } from "react-icons";
 import {
-  SiDocker,
-  SiFigma,
-  SiGit,
-  SiGraphql,
+  SiGithub,
   SiJavascript,
   SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
-  SiPython,
   SiReact,
   SiTailwindcss,
   SiTypescript,
@@ -24,11 +20,7 @@ const skillIcons: Record<string, IconType> = {
   SiNodedotjs,
   SiPostgresql,
   SiTailwindcss,
-  SiGit,
-  SiDocker,
-  SiGraphql,
-  SiPython,
-  SiFigma,
+  SiGithub,
 };
 
 export function SkillsSection() {
