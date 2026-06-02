@@ -13,7 +13,7 @@ export default function Home() {
         id="main-content"
         className="relative z-10 px-6 py-12 lg:px-16 lg:py-16"
       >
-        <div className="mx-auto flex max-w-2xl flex-col space-y-24">
+        <div className="mx-auto flex max-w-2xl flex-col space-y-24 pb-32">
           <AboutSection />
           <ProjectsSection />
           <SkillsSection />

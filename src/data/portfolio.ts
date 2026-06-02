@@ -1,3 +1,5 @@
+import type { SkillIconKey } from "@/lib/skillIcons";
+
 export interface NavItem {
   id: string;
   label: string;
@@ -5,7 +7,7 @@ export interface NavItem {
 
 export interface Project {
   title: string;
-  description: string;
+  description: string[];
   tech: string[];
   liveUrl?: string;
   githubUrl?: string;
@@ -13,7 +15,7 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  icon: string;
+  icon: SkillIconKey;
 }
 
 export interface SocialLink {
@@ -43,17 +45,23 @@ export const nav: NavItem[] = [
 export const projects: Project[] = [
   {
     title: "ShopEZ",
-    description:
+    description: [
       "The final project for the Codecademy Full Stack Engineer career path. A full-stack e-commerce platform with a focus on performance and scalability.",
-    tech: ["React", "React Router", "PostgreSQL", "Material UI", "Express", "Node.js", "JavaScript"],
+      "The frontend is built with React, React Router and Material UI.It utilises loading skeletons for a smooth user experience and uses React Context to manage the persistent cart state.",
+      "The backend is built with Node.js and Express for the server and API. It uses a PostgreSQL database hosted on Supabase.",
+    ],
+    tech: ["React", "React Router", "PostgreSQL", "Material UI", "Express", "Node.js", "JavaScript", "Supabase", "Netlify"],
     liveUrl: "https://hartjulian-shopez.netlify.app",
     githubUrl: "https://github.com/hartjulian/shopez-frontend",
   },
   {
     title: "Task Manager",
-    description:
+    description: [
       "A task manager built with React and TypeScript. It allows you to add, edit, and delete tasks.",
-    tech: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Cursor"],
+      "Features include dark mode, task filtering, and task sorting, and uses local storage to persist the task data and user theme preference.",
+      "This project was built as a learning exercise to improve my skills with React and TypeScript, and mostly to explore AI-assisted development with Cursor.",
+    ],
+    tech: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Cursor", "Netlify"],
     liveUrl: "https://hartjulian-taskmanager.netlify.app",
     githubUrl: "https://github.com/hartjulian/task-manager",
   },
@@ -65,9 +73,15 @@ export const skills: Skill[] = [
   { name: "React", icon: "SiReact" },
   { name: "Next.js", icon: "SiNextdotjs" },
   { name: "Node.js", icon: "SiNodedotjs" },
+  { name: "C#", icon: "TbBrandCSharp" },
+  { name: "ASP.NET Core", icon: "SiDotnet" },
+  { name: "Cursor", icon: "CursorIcon" },
   { name: "PostgreSQL", icon: "SiPostgresql" },
+  { name: "SQL Server", icon: "DiMsqlServer" },
   { name: "Tailwind CSS", icon: "SiTailwindcss" },
   { name: "GitHub", icon: "SiGithub" },
+
+
 ];
 
 export const social: SocialLink[] = [

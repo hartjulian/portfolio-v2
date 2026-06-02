@@ -8,7 +8,7 @@ export function ProjectsSection() {
       <SectionHeading
         id="projects-heading"
         title="Projects"
-        subtitle="Selected work with live demos and source code."
+        subtitle="Some of my recent projects with live demos and source code."
       />
 
       <ul className="divide-y divide-border">
@@ -45,9 +45,11 @@ export function ProjectsSection() {
               </div>
             </div>
 
-            <p className="mt-3 max-w-2xl text-base leading-relaxed text-foreground">
-              {project.description}
-            </p>
+            <div className="mt-3 max-w-2xl space-y-3 text-base leading-relaxed text-foreground">
+              {project.description.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
 
             <p className="mt-3 text-sm text-muted">
               {project.tech.join(" · ")}

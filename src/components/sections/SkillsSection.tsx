@@ -1,27 +1,6 @@
-import type { IconType } from "react-icons";
-import {
-  SiGithub,
-  SiJavascript,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPostgresql,
-  SiReact,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
 import { skills } from "@/data/portfolio";
 import { SectionHeading } from "@/components/SectionHeading";
-
-const skillIcons: Record<string, IconType> = {
-  SiTypescript,
-  SiJavascript,
-  SiReact,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPostgresql,
-  SiTailwindcss,
-  SiGithub,
-};
+import { skillIcons } from "@/lib/skillIcons";
 
 export function SkillsSection() {
   return (
@@ -39,12 +18,10 @@ export function SkillsSection() {
           return (
             <li key={skill.name}>
               <div className="group flex flex-col items-start gap-2">
-                {Icon ? (
-                  <Icon
-                    className="h-6 w-6 text-muted transition-colors duration-150 group-hover:text-accent"
-                    aria-hidden="true"
-                  />
-                ) : null}
+                <Icon
+                  className="h-6 w-6 text-muted transition-colors duration-150 group-hover:text-accent"
+                  aria-hidden="true"
+                />
                 <span className="text-sm text-muted transition-colors duration-150 group-hover:text-accent">
                   {skill.name}
                 </span>

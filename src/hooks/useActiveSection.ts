@@ -2,36 +2,71 @@
 
 import { useEffect, useState } from "react";
 
+const ACTIVATE_OFFSET = 128;
+const BOTTOM_THRESHOLD = 96;
+
 export function useActiveSection(sectionIds: string[]) {
   const [activeSection, setActiveSection] = useState(sectionIds[0] ?? "");
+  const sectionIdsKey = sectionIds.join("|");
 
   useEffect(() => {
-    const sections = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => el !== null);
+    const ids = sectionIdsKey.split("|").filter(Boolean);
+    if (ids.length === 0) return;
 
-    if (sections.length === 0) return;
+    const getSectionTop = (element: HTMLElement) =>
+      element.getBoundingClientRect().top + window.scrollY;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+    const isNearBottom = () => {
+      const { scrollTop, scrollHeight, clientHeight } =
+        document.documentElement;
+      const canScroll = scrollHeight > clientHeight + 1;
 
-        if (visible.length > 0) {
-          setActiveSection(visible[0].target.id);
+      return (
+        canScroll && scrollTop + clientHeight >= scrollHeight - BOTTOM_THRESHOLD
+      );
+    };
+
+    const updateActiveSection = () => {
+      if (isNearBottom()) {
+        setActiveSection(ids[ids.length - 1]);
+        return;
+      }
+
+      let current = ids[0];
+
+      for (const id of ids) {
+        const section = document.getElementById(id);
+        if (!section) continue;
+
+        if (window.scrollY >= getSectionTop(section) - ACTIVATE_OFFSET) {
+          current = id;
         }
-      },
-      {
-        rootMargin: "-20% 0px -60% 0px",
-        threshold: [0, 0.25, 0.5, 0.75, 1],
-      },
-    );
+      }
 
-    sections.forEach((section) => observer.observe(section));
+      setActiveSection(current);
+    };
 
-    return () => observer.disconnect();
-  }, [sectionIds]);
+    let frame = 0;
+
+    const scheduleUpdate = () => {
+      if (!frame) {
+        frame = requestAnimationFrame(() => {
+          updateActiveSection();
+          frame = 0;
+        });
+      }
+    };
+
+    scheduleUpdate();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, [sectionIdsKey]);
 
   return activeSection;
 }
