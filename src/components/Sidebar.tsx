@@ -15,8 +15,8 @@ export function Sidebar() {
   const activeSection = useActiveSection(sectionIds);
 
   return (
-    <aside className="relative z-10 border-b border-border bg-background lg:sticky lg:top-0 lg:h-screen lg:border-b-0 lg:border-r lg:px-8 lg:py-12">
-      <div className="flex flex-col gap-8 px-6 py-8 lg:h-full lg:px-0 lg:py-0">
+    <aside className="relative z-10 border-b border-border bg-background px-6 lg:sticky lg:top-0 lg:h-screen lg:border-b-0 lg:border-r lg:px-8 lg:py-12">
+      <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 py-8 lg:mx-0 lg:max-w-none lg:h-full lg:px-0 lg:py-0">
         <header>
           <h1 className="text-lg font-medium tracking-tight text-heading">
             {site.name}

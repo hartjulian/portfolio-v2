@@ -28,11 +28,12 @@ export const site = {
   name: "Julian Hart",
   tagline: "Software Engineer",
   focus:
-    "Currently building projects with React and ASP.NET Core while seeking a Junior Software Engineer role in Auckland.",
+    "Currently building projects with React and ASP.NET Core while seeking a software engineer role in Auckland.",
   description: [
-    "A software developer and former Visa BA with a strong interest in building technology that solves complex problems and delivers real-world value.",
-    "I'm currently strengthening my full-stack engineering skills while I seek opportunities to return to a hands-on role as a junior developer. I bring together previous development experience with a background in product management, analysis and systems-focused roles.",
-    "Outside of work, I'm an avid runner and enjoy discovering interesting coffees and craft beers.",
+    "A software developer and former Business Analyst at Visa with a strong interest in building technology that solves complex problems and delivers real-world value.",
+    "I'm currently strengthening my full-stack engineering skills while I seek opportunities to return to a hands-on software development role where I can continue to grow as an engineer.",
+    "I bring together previous commercial software development experience with a recent background in product management, analysis and systems-focused roles.",
+    "Outside of work, I'm a keen runner and enjoy discovering interesting coffees and unusual craft beers.",
   ],
 };
 
@@ -46,9 +47,9 @@ export const projects: Project[] = [
   {
     title: "ShopEZ",
     description: [
-      "The final project for the Codecademy Full Stack Engineer career path. A full-stack e-commerce platform with a focus on performance and scalability.",
-      "The frontend is built with React, React Router and Material UI.It utilises loading skeletons for a smooth user experience and uses React Context to manage the persistent cart state.",
-      "The backend is built with Node.js and Express for the server and API. It uses a PostgreSQL database hosted on Supabase.",
+      "A full-stack e-commerce platform with a focus on performance, scalability and user experience.",
+      "Built with React, React Router and Material UI, the frontend utilises loading skeletons for a smooth user experience and, React Context to manage the persistent cart state.",
+      "The backend uses Node.js and Express for the server and APIs, with product data stored in a PostgreSQL database hosted on Supabase.",
     ],
     tech: ["React", "React Router", "PostgreSQL", "Material UI", "Express", "Node.js", "JavaScript", "Supabase", "Netlify"],
     liveUrl: "https://hartjulian-shopez.netlify.app",
@@ -57,13 +58,24 @@ export const projects: Project[] = [
   {
     title: "Task Manager",
     description: [
-      "A task manager built with React and TypeScript. It allows you to add, edit, and delete tasks.",
-      "Features include dark mode, task filtering, and task sorting, and uses local storage to persist the task data and user theme preference.",
-      "This project was built as a learning exercise to improve my skills with React and TypeScript, and mostly to explore AI-assisted development with Cursor.",
+      "A simple and intuitive task manager built with React and TypeScript. Users can create, edit, and delete tasks, with support for filtering and sorting by due date and priority.",
+      "Features include dark mode and persistence of task data and user theme preference using the browser's localStorage.",
+      "This project was developed as a learning exercise to strengthen my React and TypeScript skills while exploring AI-assisted development workflows using Cursor.",
     ],
     tech: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Cursor", "Netlify"],
     liveUrl: "https://hartjulian-taskmanager.netlify.app",
     githubUrl: "https://github.com/hartjulian/task-manager",
+  },
+  {
+    title: "Revox",
+    description: [
+      "Revox, meaning to Re-voice, is a lightweight Reddit client completed as part of the Codecademy Full Stack Engineer career path.",
+      "Revox uses Reddit's APIs to fetch and display popular \"Reddits\". It is built using React and React Router, and utilises OAuth to authenticate users with their Reddit credentials.",
+      "Revox is hosted on the Netlify platform."
+    ],
+    tech: ["React", "JavaScript", "React Router", "OAuth", "Netlify"],
+    liveUrl: "https://hartjulian-revox.netlify.app",
+    githubUrl: "https://github.com/hartjulian/revox",
   },
 ];
 
@@ -73,15 +85,13 @@ export const skills: Skill[] = [
   { name: "React", icon: "SiReact" },
   { name: "Next.js", icon: "SiNextdotjs" },
   { name: "Node.js", icon: "SiNodedotjs" },
+  { name: "Express", icon: "SiExpress" },
   { name: "C#", icon: "TbBrandCSharp" },
   { name: "ASP.NET Core", icon: "SiDotnet" },
-  { name: "Cursor", icon: "CursorIcon" },
   { name: "PostgreSQL", icon: "SiPostgresql" },
   { name: "SQL Server", icon: "DiMsqlServer" },
-  { name: "Tailwind CSS", icon: "SiTailwindcss" },
-  { name: "GitHub", icon: "SiGithub" },
-
-
+  { name: "CSS", icon: "SiCss" },
+  { name: "Git", icon: "SiGit" },
 ];
 
 export const social: SocialLink[] = [

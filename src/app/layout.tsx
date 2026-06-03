@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${site.name} — Portfolio`,
+  title: site.name,
   description: site.description.join(" "),
 };
 
