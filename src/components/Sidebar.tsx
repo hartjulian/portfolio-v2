@@ -27,13 +27,13 @@ export function Sidebar() {
           </p>
         </header>
 
-        <nav aria-label="Page sections">
-          <ul className="flex gap-2 overflow-x-auto pb-1 lg:flex-col lg:gap-1 lg:overflow-visible lg:pb-0">
+        <nav aria-label="Page sections" className="hidden lg:block">
+          <ul className="flex flex-col gap-1">
             {nav.map((item) => {
               const isActive = activeSection === item.id;
 
               return (
-                <li key={item.id} className="shrink-0">
+                <li key={item.id}>
                   <a
                     href={`#${item.id}`}
                     className={`block rounded px-3 py-2 text-sm transition-colors duration-150 lg:border-l-2 lg:pl-4 ${
